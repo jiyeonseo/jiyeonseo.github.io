@@ -1,0 +1,21 @@
+{
+  "name": "temp",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "authors": {
+    "name": "",
+    "email": ""
+  },
+  "repository": "/temp",
+  "scripts": {
+    "dev": "vuepress dev blog",
+    "build": "vuepress build blog"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "@vuepress/plugin-google-analytics": "^1.3.0",
+    "@vuepress/theme-blog": "^1.0.0",
+    "vuepress": "^1.0.0"
+  }
+}
