@@ -4,7 +4,8 @@
 set -e
 
 # build
-npm run build
+# npm run build
+npx vuepress build blog
 
 # navigate into the build output directory
 cd blog/.vuepress/dist
