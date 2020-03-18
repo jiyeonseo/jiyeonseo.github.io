@@ -72,6 +72,7 @@ Installing Python-3.6.0...
 
 ### zipimport.ZipImportError: can't decompress data; zlib not available
 
+- Mac OS 
   1. xcode command line tools 설치 (참고 : https://github.com/yyuu/pyenv/issues/454)
       ```
       $ xcode-select --install
@@ -80,6 +81,20 @@ Installing Python-3.6.0...
       ```
       $ brew install homebrew/dupes/zlib
       ```
+
+- Cent OS
+  1. zlib-devel
+  ```sh
+  $ yum -y install zlib-devel
+  ```
+  https://slowcode.tistory.com/84
+
+### ModuleNotFoundError: No module named '_ctypes'
+
+- CentOS 
+  ```sh
+  $ yum install libffi-devel
+  ```
 
 ### ERROR: The Python ssl extension was not compiled. Missing the OpenSSL lib?
 
@@ -90,6 +105,14 @@ Installing Python-3.6.0...
       pyenv install -v 3.6.0
       ```
 
+  - Mac OS가 아닌 다른 Linux 계열의 경우, 
+  
+
+    ```sh
+    $ CFLAGS=-I/usr/include/openssl 
+    $ LDFLAGS=-L/usr/lib64 
+    $ pyenv install -v 3.6.0
+    ```
 
 설치 성공하면 다음과 같이 나온다.
 
