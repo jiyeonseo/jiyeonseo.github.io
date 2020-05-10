@@ -27,6 +27,45 @@ tags:
 
 마지막에 발급 받은 Token을 나중에 사용한다. 봇 생성 끝!
 
+### 봇과 나의 챗 아이디 
+
+만약 내 봇과의 대화에서 나에게만 보내고 싶은 정보가 있거나, 나의 채팅방에만 메세지를 전달해야할 때 챗 아이디를 알면 편리하다
+
+내 봇과 아무말을 한 뒤, `getUpdates`를 이용하면 내 챗 아이디를 찾을 수 있다. 
+
+```sh
+curl https://api.telegram.org/bot{bot_token}/getUpdates` 
+```
+
+```json
+{
+    ok: true,
+    result: [
+        {
+            update_id: 79374297,
+            message: {
+                message_id: 54,
+                from: {
+                    id: #myid,
+                    is_bot: false,
+                    first_name: "Cheese",
+                    last_name: "Seo",
+                    language_code: "ko"
+                },
+                chat: {
+                    id: 1234567890, // chat_id
+                    first_name: "Cheese",
+                    last_name: "Seo",
+                    type: "private"
+                },
+                date: 1589148395,
+                text: "Hey"
+             }
+        }
+    ]
+}
+```
+
 ## 2단계 : Serverless framework 를 이용한 프로젝트 생성
 
 쉽게 사용하고 쉽게 배포할수 있는 [Severless framework](https://serverless.com/framework/)을 사용하겠다. 이 프레임워크에서는 AWS, Azure 뿐만 아니라 Google cloud 등 [다양한 클라우드 프로바이더](https://serverless.com/framework/docs/)에 대해 서포트 하고 있으니 원하는 클라우드에 따라서 선택하면 된다. 이번 블로그에서는 Azure function을 사용해 보도록 하겠다. 
