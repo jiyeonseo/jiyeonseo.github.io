@@ -1,4 +1,9 @@
 const path = require("path");
+const feed_options = {
+  canonical_base: "https://jiyeonseo.github.io",
+  sort: entries => entries.sort( (a,b) => b.date - a.date )
+};
+
 module.exports = {
   title: "Daily Log",
   description: "Blog by developer cheese",
@@ -41,7 +46,8 @@ module.exports = {
       {
         ga: "UA-63830559-1"
       }
-    ]
+    ],
+    ["feed", feed_options]
   ],
   themeConfig: {
     /**
