@@ -70,10 +70,9 @@ module.exports = {
         link: "/tag/"
       },
       {
-        dirname: "aboutme.html",
+        dirname: "about.html",
         text: "About Me",
-        link: "/aboutme",
-        itemPermalink: "/aboutme"
+        link: "/about",
       }
     ],
     feed: {

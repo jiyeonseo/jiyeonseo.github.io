@@ -147,6 +147,24 @@ GitHub 에서 코드를 관리할 예정임으로 빌드된 바이너리도 GitH
 
 혹시나 해서 이렇게 올려도 되나 싶어 올려봤는데 안된다... 다운로드 받아서 실행해보면 다운받은 바이너리가 문제가 있는 듯 하다. 
 
+(update) 권한의 문제였다! repository에 올린 바이너리를 `git clone` 을 통해 다운로드 받으면 권한이 있다. 
+
+```
+-rwxr-xr-x  1 user  staff   6.5M  3  6 14:06 install-bitbar
+```
+
+하지만 브라우저에서 직접 다운로드를 하게 되면...  
+![](https://user-images.githubusercontent.com/2231510/110196124-beb1b700-7e85-11eb-859a-5cf9bf52b39c.png)
+
+```
+-rw-r--r--@ 1 user  staff   6.5M  3  6 14:11 install-bitbar
+```
+권한이 변경된다. 그리고 클릭을 통해 실행하려고 하면...
+
+![](https://user-images.githubusercontent.com/2231510/110196183-3384f100-7e86-11eb-95b4-0512a861d51a.png)
+
+와 같은 경고창이 뜬다. (permission denied 일거라 생각할 수 없는 경고 메세지... ) 터미널에서 `chmod +x install-bitbar`로 실행 권한을 주면 잘 된다. 하지만 비개발자를 위한 스크립트이기에 터미널로 넘어가는 과정을 넣고 싶지 않았다.
+
 BitBar에서 사용하고 있는 방법을 따라해보기로 했다. `/{버전명 폴더}` (ex. `/0.0.1`) 에 빌드된 바이너리를 넣고 압축하여 release에 함께 추가해 주었다. 
 
 ![](https://user-images.githubusercontent.com/2231510/109571812-90537500-7b2f-11eb-80fa-3eadd0c2fdb0.png)
