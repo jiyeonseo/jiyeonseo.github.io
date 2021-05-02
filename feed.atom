@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://jiyeonseo.github.io</id>
+    <title>Daily Log</title>
+    <updated>2021-05-02T22:57:49.607Z</updated>
+    <generator>https://github.com/webmasterish/vuepress-plugin-feed</generator>
+    <link rel="alternate" href="https://jiyeonseo.github.io"/>
+    <link rel="self" href="https://jiyeonseo.github.io/feed.atom"/>
+    <subtitle>Blog by developer cheese</subtitle>
+    <entry>
+        <title type="html"><![CDATA[프로그래머를 위한 베이지안 1. 베이지안 추론의 철학]]></title>
+        <id>https://jiyeonseo.github.io/2021/05/02/bayesian-for-hackers-1/</id>
+        <link href="https://jiyeonseo.github.io/2021/05/02/bayesian-for-hackers-1/">
+        </link>
+        <updated>2021-05-02T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[팀에서 Do it! 딥러닝 입문으로 ML 스터디를 끝낸 뒤, 한껏 부푼 자신감을 갖고 Kaggle 몇 문제를 풀어보았다. 당연히 제대로 진행이 되지 않았다. 다른 사람이 푼 풀이를 보며 겨우겨우 따라가는 정도로 내 지식은 너무 부족 ...]]></summary>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[비개발자 동료를 위한 Bitbar 자동 세팅 스크립트 go로 짜보기]]></title>
+        <id>https://jiyeonseo.github.io/2021/03/02/go-app-for-everyone/</id>
+        <link href="https://jiyeonseo.github.io/2021/03/02/go-app-for-everyone/">
+        </link>
+        <updated>2021-03-02T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[업무용 맥 장비를 받으면 꼭 설치하는 앱이 있다. 바로 BitBar.
+
+BitBar는 맥의 메뉴 ...]]></summary>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[생활코딩 암호학 1 정리]]></title>
+        <id>https://jiyeonseo.github.io/2020/12/12/cryptograph1/</id>
+        <link href="https://jiyeonseo.github.io/2020/12/12/cryptograph1/">
+        </link>
+        <updated>2020-12-12T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[암호 관련해서 따로 공부해 본 적은 없었다. 민감한 정보를 저장할 때는 SHA로 hash 데이터로 저장해야 한다. 암호화와 복호화가 있고 대표적인 몇몇 알고리즘이 있다.라는 것 정도로 아주 얕게 알고 사용하고 있었다.
+그러던 중 평소에도 항상 눈여겨보고 있는 생활코딩에서 암호학 1 기초 편이 올라와 이번 기회에 제대로 알고 가고자 공부한 내용을 정리해 ...]]></summary>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[파이썬 언어 감지 라이브러리들 비교]]></title>
+        <id>https://jiyeonseo.github.io/2020/10/13/py-lang-detection/</id>
+        <link href="https://jiyeonseo.github.io/2020/10/13/py-lang-detection/">
+        </link>
+        <updated>2020-10-13T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[사용자 입력값을 보고 언어를 감지하고자 한다.
+
+요구사항은...
+
+정확성이 높고.
+이름과 같이 짧을 단어(한 글자, 두 글자)까지도 커버.
+(optional) 빠르고 다양한 언어를 지원할수록 좋다.
+
+TL;DR
+정확도가 높고 빠른것은 fastText, 단어가 몇개 없는데도 잘 인식된 것은 langid.py 였다.
+
+라이브러리들 ...]]></summary>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[전국에 맥도날드 주소가 어떻게 될까?]]></title>
+        <id>https://jiyeonseo.github.io/2020/08/01/where-is-mcdonald-addr/</id>
+        <link href="https://jiyeonseo.github.io/2020/08/01/where-is-mcdonald-addr/">
+        </link>
+        <updated>2020-08-01T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[친구에게 연락이 왔다. (선생님, 대표님 호칭은 장난이다)
+
+상황은 간단했다. 각종 프랜차이즈 혹은 은행들의 오프라인 매장 주소가 정리된 엑셀 파일이 필요하다는 것이었다.
+직접 해도 되긴 하는데 혹시 이런 거 가능한 건지, 혹시 시간이 된다면 도와줄 수 있는지였다.
+
+원래 내가 더 도움을 ...]]></summary>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Jenkins를 이용하여 상태 모니터링하기]]></title>
+        <id>https://jiyeonseo.github.io/2020/03/19/jenkins-health-check/</id>
+        <link href="https://jiyeonseo.github.io/2020/03/19/jenkins-health-check/">
+        </link>
+        <updated>2020-03-19T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[매번하지만 항상 까먹는 젠킨스 설정.
+
+간단하게 젠킨스를 이용해 서비스가 잘 돌아가고 있는지 체크하는 잡을 정리한다.
+
+환경: Jenkins
+
+매개 변수
+
+매개변수로 꺼내놓으면 다른 서비스, 웹사이트 등 하나의 item을 카피해서 변경해주기 쉽다.
+URL : 확인할 URL
+ATTEMPT : 시도 할 숫자
+`T ...]]></summary>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[빠르게 시작하는 pytest]]></title>
+        <id>https://jiyeonseo.github.io/2020/03/10/pytest/</id>
+        <link href="https://jiyeonseo.github.io/2020/03/10/pytest/">
+        </link>
+        <updated>2020-03-10T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[pytest를 적용하면서 공부한 내용을 정리하는거라 간단하게 정리합니다. 추후 더 공부하며 업데이트 하겠습니다.
+
+> pytest is a framework that makes building simple and scalable tests easy. Tests are expressive and readable—no boilerplate code requ ...]]></summary>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Rust 기초]]></title>
+        <id>https://jiyeonseo.github.io/2020/03/07/start-rust/</id>
+        <link href="https://jiyeonseo.github.io/2020/03/07/start-rust/">
+        </link>
+        <updated>2020-03-07T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[설치
+
+$ curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+
+Quick Hello world!
+// main.rs
+fn main() {
+    println!("hello world")
+}
+
+$ rustc main.rs
+$ ./ma ...]]></summary>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[(회고) 2020 2월]]></title>
+        <id>https://jiyeonseo.github.io/2020/03/01/feb-2020/</id>
+        <link href="https://jiyeonseo.github.io/2020/03/01/feb-2020/">
+        </link>
+        <updated>2020-03-01T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[코로나로 모두가 힘들었던 한 달 이였다. 심지어 아직도 끝나지 않았으며, SNS에서는 각종 혐오가 난무하며, 가족들을 걱정하는 것 밖에는 내가 할 수 있는게 없는 무기력한 나날이 계속 되고 있다.
+
+나쁜 일만 있었던 것은 아니다. 코로나맵, [질병관리본부 챗봇](https://tess.dev/posts/k ...]]></summary>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[.bashrc tips]]></title>
+        <id>https://jiyeonseo.github.io/2020/02/16/bashrc-tips/</id>
+        <link href="https://jiyeonseo.github.io/2020/02/16/bashrc-tips/">
+        </link>
+        <updated>2020-02-16T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[사실 나는 Oh My Zsh을 써서 주로 ~/.zshrc 를 쓰지만, 더 일반적인 경우에도 쓸 수 있음으로 제목은 ~/.bashrc로. 자기가 원하는 곳에 잘 넣어주기만 하면 된다.
+
+터미널에서 지금 경로 VS Code로 바로 열기
+
+설정 방법
+
+.bashrc or .zshrc
+code ( ...]]></summary>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Python string이 valid json 형태인지 확인하기]]></title>
+        <id>https://jiyeonseo.github.io/2020/02/15/python-string-json/</id>
+        <link href="https://jiyeonseo.github.io/2020/02/15/python-string-json/">
+        </link>
+        <updated>2020-02-15T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[import json
+def is_json(obj):
+    try:
+        json_object = json.loads(obj)
+{ } 가 포함된 string이 invalid json 인 경우 Exception
+        iterator = iter(json_object)
+{ } 가 없는 경우는 ...]]></summary>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[(회고) 2020 1월]]></title>
+        <id>https://jiyeonseo.github.io/2020/02/01/jan-2020/</id>
+        <link href="https://jiyeonseo.github.io/2020/02/01/jan-2020/">
+        </link>
+        <updated>2020-02-01T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[2019년을 마무리하며 일년 회고를 하지 않았다. 여러 변명 거리가 있긴 하지만 어째뜬 가장 큰 이유는 귀찮아서 였다. 왠지 잘 기억도 안나고. 올해부터는 한달에 한번씩 미리 회고를 해볼까 한다. 혼자하는 월말정산.
+
+#공부
+
+영어공부 : 링글 시작
+영어 공부는 평생 숙제이지만 좋아하기도 한다. 다른 공부의 영역을 넓히는데 가장 큰 ...]]></summary>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Applescript로 간단한 카톡 자동 대화하기]]></title>
+        <id>https://jiyeonseo.github.io/2019/12/28/applescript/</id>
+        <link href="https://jiyeonseo.github.io/2019/12/28/applescript/">
+        </link>
+        <updated>2019-12-28T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[카카오톡에서 카카오 AI봇(외개인아가)을 오픈하면서 이벤트 를 하였다. 경품은 에어팟 프로! 경품을 받고싶다.
+
+이벤트 상세 정보는 아래와 같다.
+카카오톡채널: 외개인아가 [https://pf.kakao.com/lKxoMT](https://pf.kakao.com/ ...]]></summary>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Vim 공부하기 - Week 1]]></title>
+        <id>https://jiyeonseo.github.io/2019/06/07/vim-study-week1/</id>
+        <link href="https://jiyeonseo.github.io/2019/06/07/vim-study-week1/">
+        </link>
+        <updated>2019-06-07T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[나는 왜 vim 공부를 시작했는가
+Vim을 아예 사용할 줄 몰랐던 건 아닙니다. 일을 하다보면 바로 서버 붙어서 작업 할 때도 종종 있고, finder로 파일 찾기 귀찮을 때, 텍스트로 이루어 진 파일을 볼 땐 vim이 제일 편하니까요.
+
+트위터에서 핫했던 [Vim 교정학원](https://www.youtube.com/watch?v=lNWuf4 ...]]></summary>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[일일커밋 Day 112]]></title>
+        <id>https://jiyeonseo.github.io/2019/01/21/daily-commit-100days/</id>
+        <link href="https://jiyeonseo.github.io/2019/01/21/daily-commit-100days/">
+        </link>
+        <updated>2019-01-21T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[작년 HacktoberFest를 기점으로 왠지 "일일 커밋"을 하게 되었다. (중간중간 15일 정도 빼먹었네)
+
+지구력이 좋은 편이긴 하지만 커밋 습관(본업 제외하고) 처음이라 좀 뿌듯하기도 하고 앞으로 더 잘하고 싶어 짧게 소감을 남겨 보려 한다.
+
+좋았던 점
+
+Hack ...]]></summary>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[[책] '가장 빨리 만나는 챗봇 프로그래밍']]></title>
+        <id>https://jiyeonseo.github.io/2019/01/02/chatbot-programming/</id>
+        <link href="https://jiyeonseo.github.io/2019/01/02/chatbot-programming/">
+        </link>
+        <updated>2019-01-02T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[['가장 빨리 만나는 챗봇 프로그래밍 with Bot Framework'](https://search.daum.net/search?w=bookpage&bookId=4836771&tab=introduction&DA=LB2&q=%EA%B0%80%EC%9E%A5%20%EB%B9%A8%EB%A6%AC%20%EB%A7%8C%EB%82%98%EB%8A%94%20% ...]]></summary>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[[회고] Review 2018]]></title>
+        <id>https://jiyeonseo.github.io/2018/12/31/review2018/</id>
+        <link href="https://jiyeonseo.github.io/2018/12/31/review2018/">
+        </link>
+        <updated>2018-12-31T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[올해는 좋은 회고들이 정말 많이 올라오는 것 같다. (너무 부끄러워서) 썼다 지웠다를 반복하다가 좋은 회고 포맷을 보고 정말 간단히 올해를 정리해보기로 마음 먹었다. 2019년 12월 31일에는 그래도 꽤 발전했구나 하며 이 글을 볼 수 있길.
+ ...]]></summary>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[[후기] Deview 2018]]></title>
+        <id>https://jiyeonseo.github.io/2018/10/14/deview2018/</id>
+        <link href="https://jiyeonseo.github.io/2018/10/14/deview2018/">
+        </link>
+        <updated>2018-10-14T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[deview2018
+
+올해도 좋은 분들의 도움을 받아 Deview2018 Day1에 다녀왔다.
+
+매년마다 올해는 내용이 괜찮네, 구성이 좋네, 부스가 나쁘네, 기념 ...]]></summary>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Azure Function + Telegram chatbot 만들기]]></title>
+        <id>https://jiyeonseo.github.io/2018/08/31/telegram-chatbot/</id>
+        <link href="https://jiyeonseo.github.io/2018/08/31/telegram-chatbot/">
+        </link>
+        <updated>2018-08-31T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Serverless Telegram bot on AWS Lambda 는 AWS 람다 + Python 을 이용하여 텔레그램 봇을 만드는 실습 블로그인데, 읽다가 왠지 조금 다르게 해보고 싶어서 Azure Function ...]]></summary>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[[책] 그로스 해킹 Growth Hacking]]></title>
+        <id>https://jiyeonseo.github.io/2018/08/12/growth-hacking/</id>
+        <link href="https://jiyeonseo.github.io/2018/08/12/growth-hacking/">
+        </link>
+        <updated>2018-08-12T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[그로스 해킹 Growth Hacking - 스타트업을 위한 실용주의 마케팅
+
+작고 얇은 분량이 맘에 들어 집어든 책인데 정말 알차게 핵심을 짚고 있는 책이라 시간가는 줄 모르고 술술 읽었다. IT 회사 혹은 스타트업에서 일하는 기획자 혹은 개 ...]]></summary>
+    </entry>
+</feed>

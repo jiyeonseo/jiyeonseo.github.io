@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>FP101x - week 4 List Comprehensions | Daily Log</title>
+    <meta name="generator" content="VuePress 1.8.2">
+    <link rel="apple-touch-icon" sizes="180x180" href="../assets/favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../assets/favicons/favicon-16x16.png">
+    <link rel="shortcut icon" href="../assets/favicons/favicon.ico">
+    <link rel="alternate" type="application/rss+xml" href="https://jiyeonseo.github.io/rss.xml" title="Daily Log RSS Feed">
+    <link rel="alternate" type="application/atom+xml" href="https://jiyeonseo.github.io/feed.atom" title="Daily Log Atom Feed">
+    <link rel="alternate" type="application/json" href="https://jiyeonseo.github.io/feed.json" title="Daily Log JSON Feed">
+    <meta name="description" content="
+Set Comprehensions
+the comprehension notation can be used to construct new sets from old sets
+
+x <- [1..5] : generator
+Comprehensions can have multiple generators , separated bu commas
+e ...">
+    
+    <link rel="preload" href="/assets/css/0.styles.8fc4e446.css" as="style"><link rel="preload" href="/assets/js/app.a6c7b665.js" as="script"><link rel="preload" href="/assets/js/13.b886e480.js" as="script"><link rel="preload" href="/assets/js/4.1de02c6d.js" as="script"><link rel="preload" href="/assets/js/42.33caf12c.js" as="script"><link rel="prefetch" href="/assets/js/10.396c499b.js"><link rel="prefetch" href="/assets/js/11.f8c41c07.js"><link rel="prefetch" href="/assets/js/12.4f9a320c.js"><link rel="prefetch" href="/assets/js/14.257bb58c.js"><link rel="prefetch" href="/assets/js/15.2851c296.js"><link rel="prefetch" href="/assets/js/16.72f67ba0.js"><link rel="prefetch" href="/assets/js/17.79684d8f.js"><link rel="prefetch" href="/assets/js/18.635a926d.js"><link rel="prefetch" href="/assets/js/19.ca6e1116.js"><link rel="prefetch" href="/assets/js/20.eeb90842.js"><link rel="prefetch" href="/assets/js/21.b9ece9d7.js"><link rel="prefetch" href="/assets/js/22.3b985241.js"><link rel="prefetch" href="/assets/js/23.7d1a2876.js"><link rel="prefetch" href="/assets/js/24.00f9508d.js"><link rel="prefetch" href="/assets/js/25.13acabfd.js"><link rel="prefetch" href="/assets/js/26.65cf9d1c.js"><link rel="prefetch" href="/assets/js/27.e620d3d1.js"><link rel="prefetch" href="/assets/js/28.7565aa52.js"><link rel="prefetch" href="/assets/js/29.7763b0ff.js"><link rel="prefetch" href="/assets/js/3.c56926bf.js"><link rel="prefetch" href="/assets/js/30.90131507.js"><link rel="prefetch" href="/assets/js/31.fad92296.js"><link rel="prefetch" href="/assets/js/32.41b571cd.js"><link rel="prefetch" href="/assets/js/33.6efb4962.js"><link rel="prefetch" href="/assets/js/34.d4006d9d.js"><link rel="prefetch" href="/assets/js/35.c43c69d5.js"><link rel="prefetch" href="/assets/js/36.5edb6a5e.js"><link rel="prefetch" href="/assets/js/37.666af244.js"><link rel="prefetch" href="/assets/js/38.edae7e68.js"><link rel="prefetch" href="/assets/js/39.4d8845f4.js"><link rel="prefetch" href="/assets/js/40.7ee21b6b.js"><link rel="prefetch" href="/assets/js/41.93f1d523.js"><link rel="prefetch" href="/assets/js/43.a0f80250.js"><link rel="prefetch" href="/assets/js/44.1ea860d3.js"><link rel="prefetch" href="/assets/js/45.065c06e0.js"><link rel="prefetch" href="/assets/js/46.ab8936ff.js"><link rel="prefetch" href="/assets/js/47.b93de6ca.js"><link rel="prefetch" href="/assets/js/48.76eb1a91.js"><link rel="prefetch" href="/assets/js/49.06229433.js"><link rel="prefetch" href="/assets/js/5.6373c39a.js"><link rel="prefetch" href="/assets/js/50.0280b479.js"><link rel="prefetch" href="/assets/js/51.d519a039.js"><link rel="prefetch" href="/assets/js/52.1e5f980b.js"><link rel="prefetch" href="/assets/js/53.30fd041a.js"><link rel="prefetch" href="/assets/js/54.faf2c12a.js"><link rel="prefetch" href="/assets/js/55.fa5439ca.js"><link rel="prefetch" href="/assets/js/56.c28c14f3.js"><link rel="prefetch" href="/assets/js/57.d5ca7f09.js"><link rel="prefetch" href="/assets/js/58.2dd31a09.js"><link rel="prefetch" href="/assets/js/59.c9daa427.js"><link rel="prefetch" href="/assets/js/6.47e7495d.js"><link rel="prefetch" href="/assets/js/60.5423e49b.js"><link rel="prefetch" href="/assets/js/61.02d296cb.js"><link rel="prefetch" href="/assets/js/62.00598482.js"><link rel="prefetch" href="/assets/js/63.7bab40b3.js"><link rel="prefetch" href="/assets/js/64.2f75e7fb.js"><link rel="prefetch" href="/assets/js/65.d1fd4616.js"><link rel="prefetch" href="/assets/js/66.cfcd1680.js"><link rel="prefetch" href="/assets/js/67.911eb440.js"><link rel="prefetch" href="/assets/js/68.f7dda20a.js"><link rel="prefetch" href="/assets/js/69.c404b285.js"><link rel="prefetch" href="/assets/js/7.941fe79d.js"><link rel="prefetch" href="/assets/js/70.0b945a1f.js"><link rel="prefetch" href="/assets/js/71.1b88889a.js"><link rel="prefetch" href="/assets/js/72.d2958f53.js"><link rel="prefetch" href="/assets/js/73.4fb90405.js"><link rel="prefetch" href="/assets/js/74.9576e999.js"><link rel="prefetch" href="/assets/js/75.7d4828be.js"><link rel="prefetch" href="/assets/js/76.e6b23150.js"><link rel="prefetch" href="/assets/js/77.34672f60.js"><link rel="prefetch" href="/assets/js/78.931d74ea.js"><link rel="prefetch" href="/assets/js/79.ca36548a.js"><link rel="prefetch" href="/assets/js/8.100df942.js"><link rel="prefetch" href="/assets/js/80.7e91d924.js"><link rel="prefetch" href="/assets/js/81.5348cdb7.js"><link rel="prefetch" href="/assets/js/82.bf800ac3.js"><link rel="prefetch" href="/assets/js/83.ad26aaa3.js"><link rel="prefetch" href="/assets/js/84.e7436006.js"><link rel="prefetch" href="/assets/js/85.8202ceb3.js"><link rel="prefetch" href="/assets/js/86.b4e28330.js"><link rel="prefetch" href="/assets/js/87.653ef09f.js"><link rel="prefetch" href="/assets/js/88.ad6df110.js"><link rel="prefetch" href="/assets/js/89.cd9b04d2.js"><link rel="prefetch" href="/assets/js/9.02a8698b.js"><link rel="prefetch" href="/assets/js/vuejs-paginate.5d57082f.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.8fc4e446.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div id="vuepress-theme-blog__global-layout"><section id="header-wrapper"><header id="header"><div class="header-wrapper"><div class="title"><a href="/" class="nav-link home-link">Daily Log </a></div> <div class="header-right-wrap"><ul class="nav"><li class="nav-item"><a href="/" class="nav-link">Blog</a></li><li class="nav-item"><a href="/tag/" class="nav-link">Tags</a></li><li class="nav-item"><a href="/about.html" class="nav-link">About Me</a></li></ul> <div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <a href="/rss.xml" class="feed"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-rss"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg></a></div></div></header></section> <div id="mobile-header"><div class="mobile-header-bar"><div class="mobile-header-title"><a href="/" class="nav-link mobile-home-link">Daily Log </a> <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg></div> <div class="mobile-menu-wrapper"><hr class="menu-divider"> <ul class="mobile-nav"><li class="mobile-nav-item"><a href="/" class="nav-link">Blog</a></li><li class="mobile-nav-item"><a href="/tag/" class="nav-link">Tags</a></li><li class="mobile-nav-item"><a href="/about.html" class="nav-link">About Me</a></li> <li class="mobile-nav-item"><a href="/rss.xml" class="feed"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-rss"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg></a></li></ul></div></div></div> <div class="content-wrapper"><div id="vuepress-theme-blog__post-layout"><article itemscope="itemscope" itemtype="https://schema.org/BlogPosting" class="vuepress-blog-theme-content"><header><h1 itemprop="name headline" class="post-title">
+        
+      </h1> <div class="post-meta"><!----> <div class="post-meta-date"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-clock"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg> <time pubdate itemprop="datePublished" datetime="2015-11-01T00:00:00.000Z">
+      2015-11-01
+    </time></div> <ul itemprop="keywords" class="post-meta-tags"><li class="post-tag" data-v-42ccfcd5><a href="/tag/fp" data-v-42ccfcd5><span data-v-42ccfcd5>fp</span></a></li><li class="post-tag" data-v-42ccfcd5><a href="/tag/haskell" data-v-42ccfcd5><span data-v-42ccfcd5>haskell</span></a></li></ul></div></header> <div itemprop="articleBody" class="content__default"><h1 id="fp101x-week-4-list-comprehensions"><a href="#fp101x-week-4-list-comprehensions" class="header-anchor">#</a> FP101x - week 4 List Comprehensions</h1> <h3 id="set-comprehensions"><a href="#set-comprehensions" class="header-anchor">#</a> Set Comprehensions</h3> <ul><li><p>the comprehension notation can be used to construct new sets from old sets</p></li> <li><p>x &lt;- [1..5] : generator</p></li> <li><p>Comprehensions can have multiple generators , separated bu commas</p></li> <li><p>ex)</p></li></ul> <div class="language- extra-class"><pre class="language-text"><code>&gt; [(x,y) | x &lt;- [1,2,3] , y &lt;- [4,5]]
+[(1,4),(1,5),(2,4),(2,5),(3,4),(3,5)]
+</code></pre></div><ul><li>changing the order of the generators changes the order of the elements in the final list</li></ul> <div class="language- extra-class"><pre class="language-text"><code>&gt; [(x,y) | y &lt;- [4,5], x &lt;- [1,2,3] ]
+[(1,4),(2,4),(3,4),(1,5),(2,5),(3,5)]
+</code></pre></div><h3 id="dependant-generators"><a href="#dependant-generators" class="header-anchor">#</a> dependant Generators</h3> <ul><li>Later generators can depend on the variables
+ex)</li></ul> <div class="language- extra-class"><pre class="language-text"><code>&gt; [(x,y) | x &lt;- [1..3], y &lt;-[x..3]]
+[(1,1),(1,2),(1,3),(2,2),(2,3),(3,3)]
+</code></pre></div><ul><li>concatenates a list of lists</li></ul> <div class="language- extra-class"><pre class="language-text"><code>concat :: [[a]] -&gt; [a]
+concat xss = [x|xs &lt;- xss, x &lt;- xs]
+
+&gt; concat [[1,2,3], [4,5], [6]]
+[1,2,3,4,5,6]
+</code></pre></div><h3 id="guards"><a href="#guards" class="header-anchor">#</a> Guards</h3> <ul><li>List comprehensions can use guards to restrict the values</li></ul> <div class="language- extra-class"><pre class="language-text"><code>&gt; [ x | x &lt;- [1..10], even x]
+[2,4,6,8,10]
+</code></pre></div><ul><li>factors</li> <li>maps a positive integer to its list of factors:</li> <li>인자, 인수</li></ul> <div class="language- extra-class"><pre class="language-text"><code>factors :: Int -&gt; [Int]
+factors n = [ x | x &lt;- [1..n], n ‘mod’ x == 0]
+
+&gt; factor 15
+[1,3,5,15]
+</code></pre></div><ul><li>prime</li> <li>A positive integer is prime if its only factors are 1 and itself.</li> <li>Hence, using factors we can define a function that decides it a number is prime</li> <li>소수</li></ul> <div class="language- extra-class"><pre class="language-text"><code>prime :: Int -&gt; Bool
+prime n = factors  == [1,n]
+
+&gt; prime 15
+false
+&gt; prime 7
+truer
+</code></pre></div><ul><li>primes</li> <li>the list of all primes up to a given limit</li></ul> <div class="language- extra-class"><pre class="language-text"><code>primes :: Int -&gt; [Int]
+primes n = [x | x &lt;- [2..n], prime x]
+
+&gt; primes 40
+[2,3,5,7,11,13,17,19,23,29,31,37]
+</code></pre></div><h3 id="the-zip-function"><a href="#the-zip-function" class="header-anchor">#</a> the Zip Function</h3> <ul><li>maps two lists to a list of pairs of their corresponding elements</li></ul> <div class="language- extra-class"><pre class="language-text"><code>zip :: [a] -&gt; [b] -&gt; [(a,b)]
+
+&gt; zip [‘a’,’b’,’c’] [1,2,3,4]
+[(‘a’,1),(‘b’,2),(‘c’,3)]
+</code></pre></div><ul><li>pairs</li> <li>Using zip we can define a function returns the list of all pairs of adjacent elements from a list</li></ul> <div class="language- extra-class"><pre class="language-text"><code>pairs :: [a] -&gt; [(a,a)]
+pairs xs = zip xs (tail xs)
+
+&gt; pairs [1,2,3,4]
+[(1,2),(2,3),(3,4)]
+</code></pre></div><ul><li>sorted</li> <li>Using pairs we can define a function that decides if the elements in a list are sorted</li></ul> <div class="language- extra-class"><pre class="language-text"><code>sorted :: Ord a =&gt; [a] -&gt; Bool
+sorted xs = and [ x &lt;= y | (x,y) &lt;- pairs xs ]
+
+&gt; sorted [1,2,3,4]
+True
+&gt; sorted [1,3,2,4]
+False
+</code></pre></div><ul><li>positions</li> <li>Using zip, functions that returns the list of all positions of a value in a list</li></ul> <div class="language- extra-class"><pre class="language-text"><code>positions :: Ez a =&gt; a -&gt; [a] -&gt; [Int]
+positions x xs =
+     [ i | (x’ ,i) &lt;- zip xs [0..n], x == x’]
+      where n = length xs - 1
+
+&gt; positions 0 [1,0,0,1,0,1,1,0]
+[1,2,4,7]
+</code></pre></div><h3 id="string-comprehensions"><a href="#string-comprehensions" class="header-anchor">#</a> String Comprehensions</h3> <ul><li>A string is a sequence of characters enclosed in double quotes</li> <li>Strings are represented as lists of characters</li> <li>“abc” :: String</li> <li>means [‘a’,’b’,’c’] :: [Char]</li></ul> <div class="language- extra-class"><pre class="language-text"><code>&gt; length “abcde&quot;
+5
+
+&gt;take 3 “abcde&quot;
+“abc&quot;
+
+&gt; zip “abc” [1,2,3,4]
+[(‘a’,1),(‘b’,2),(‘c’,3)]
+</code></pre></div><ul><li>lowers</li> <li>function that counts the lower-case letters in a string</li></ul> <div class="language- extra-class"><pre class="language-text"><code>lowers :: String -&gt; Int
+lowers xs = length [x | x &lt;- xs, isLower x]
+
+&gt; lowers “Haskell&quot;
+6
+</code></pre></div></div> <footer><!----> <hr> <!----></footer></article> <div class="sticker vuepress-toc"><div class="vuepress-toc-item vuepress-toc-h3 active"><a href="#set-comprehensions" title="Set Comprehensions">Set Comprehensions</a></div><div class="vuepress-toc-item vuepress-toc-h3"><a href="#dependant-generators" title="dependant Generators">dependant Generators</a></div><div class="vuepress-toc-item vuepress-toc-h3"><a href="#guards" title="Guards">Guards</a></div><div class="vuepress-toc-item vuepress-toc-h3"><a href="#the-zip-function" title="the Zip Function">the Zip Function</a></div><div class="vuepress-toc-item vuepress-toc-h3"><a href="#string-comprehensions" title="String Comprehensions">String Comprehensions</a></div></div></div></div> <footer class="footer" data-v-3d9deeb8><div class="footer-left-wrap" data-v-3d9deeb8><ul class="contact" data-v-3d9deeb8><li class="contact-item" data-v-3d9deeb8><a href="https://github.com/jiyeonseo" target="_blank" rel="noopener noreferrer" class="nav-link external" data-v-3d9deeb8><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-github" data-v-3d9deeb8><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22" data-v-3d9deeb8></path></svg>
+          
+        </a></li><li class="contact-item" data-v-3d9deeb8><a href="https://twitter.com/seojeee" target="_blank" rel="noopener noreferrer" class="nav-link external" data-v-3d9deeb8><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-twitter" data-v-3d9deeb8><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z" data-v-3d9deeb8></path></svg>
+          
+        </a></li></ul></div> <div class="footer-right-wrap" data-v-3d9deeb8><ul class="copyright" data-v-3d9deeb8><li class="copyright-item" data-v-3d9deeb8>Copyright © Jiyeon Seo 2020</li></ul></div></footer></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.a6c7b665.js" defer></script><script src="/assets/js/13.b886e480.js" defer></script><script src="/assets/js/4.1de02c6d.js" defer></script><script src="/assets/js/42.33caf12c.js" defer></script>
+  </body>
+</html>

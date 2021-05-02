@@ -1,0 +1,160 @@
+{
+    "version": "https://jsonfeed.org/version/1",
+    "title": "Daily Log",
+    "home_page_url": "https://jiyeonseo.github.io",
+    "feed_url": "https://jiyeonseo.github.io/feed.json",
+    "description": "Blog by developer cheese",
+    "items": [
+        {
+            "id": "https://jiyeonseo.github.io/2021/05/02/bayesian-for-hackers-1/",
+            "url": "https://jiyeonseo.github.io/2021/05/02/bayesian-for-hackers-1/",
+            "title": "프로그래머를 위한 베이지안 1. 베이지안 추론의 철학",
+            "summary": "팀에서 Do it! 딥러닝 입문으로 ML 스터디를 끝낸 뒤, 한껏 부푼 자신감을 갖고 Kaggle 몇 문제를 풀어보았다. 당연히 제대로 진행이 되지 않았다. 다른 사람이 푼 풀이를 보며 겨우겨우 따라가는 정도로 내 지식은 너무 부족 ...",
+            "image": "https://user-images.githubusercontent.com/2231510/116806068-9385d400-ab65-11eb-834d-2c4cec9475b5.png",
+            "date_modified": "2021-05-02T00:00:00.000Z"
+        },
+        {
+            "id": "https://jiyeonseo.github.io/2021/03/02/go-app-for-everyone/",
+            "url": "https://jiyeonseo.github.io/2021/03/02/go-app-for-everyone/",
+            "title": "비개발자 동료를 위한 Bitbar 자동 세팅 스크립트 go로 짜보기",
+            "summary": "업무용 맥 장비를 받으면 꼭 설치하는 앱이 있다. 바로 BitBar.\n\nBitBar는 맥의 메뉴 ...",
+            "image": "https://user-images.githubusercontent.com/2231510/109470694-209fa480-7ab3-11eb-8ec3-e73c9ba6cf4b.png",
+            "date_modified": "2021-03-02T00:00:00.000Z"
+        },
+        {
+            "id": "https://jiyeonseo.github.io/2020/12/12/cryptograph1/",
+            "url": "https://jiyeonseo.github.io/2020/12/12/cryptograph1/",
+            "title": "생활코딩 암호학 1 정리",
+            "summary": "암호 관련해서 따로 공부해 본 적은 없었다. 민감한 정보를 저장할 때는 SHA로 hash 데이터로 저장해야 한다. 암호화와 복호화가 있고 대표적인 몇몇 알고리즘이 있다.라는 것 정도로 아주 얕게 알고 사용하고 있었다.\n그러던 중 평소에도 항상 눈여겨보고 있는 생활코딩에서 암호학 1 기초 편이 올라와 이번 기회에 제대로 알고 가고자 공부한 내용을 정리해 ...",
+            "date_modified": "2020-12-12T00:00:00.000Z"
+        },
+        {
+            "id": "https://jiyeonseo.github.io/2020/10/13/py-lang-detection/",
+            "url": "https://jiyeonseo.github.io/2020/10/13/py-lang-detection/",
+            "title": "파이썬 언어 감지 라이브러리들 비교",
+            "summary": "사용자 입력값을 보고 언어를 감지하고자 한다.\n\n요구사항은...\n\n정확성이 높고.\n이름과 같이 짧을 단어(한 글자, 두 글자)까지도 커버.\n(optional) 빠르고 다양한 언어를 지원할수록 좋다.\n\nTL;DR\n정확도가 높고 빠른것은 fastText, 단어가 몇개 없는데도 잘 인식된 것은 langid.py 였다.\n\n라이브러리들 ...",
+            "date_modified": "2020-10-13T00:00:00.000Z"
+        },
+        {
+            "id": "https://jiyeonseo.github.io/2020/08/01/where-is-mcdonald-addr/",
+            "url": "https://jiyeonseo.github.io/2020/08/01/where-is-mcdonald-addr/",
+            "title": "전국에 맥도날드 주소가 어떻게 될까?",
+            "summary": "친구에게 연락이 왔다. (선생님, 대표님 호칭은 장난이다)\n\n상황은 간단했다. 각종 프랜차이즈 혹은 은행들의 오프라인 매장 주소가 정리된 엑셀 파일이 필요하다는 것이었다.\n직접 해도 되긴 하는데 혹시 이런 거 가능한 건지, 혹시 시간이 된다면 도와줄 수 있는지였다.\n\n원래 내가 더 도움을 ...",
+            "image": "https://jiyeonseo.github.io/@assets/20200801/kakaotalk.jpg",
+            "date_modified": "2020-08-01T00:00:00.000Z"
+        },
+        {
+            "id": "https://jiyeonseo.github.io/2020/03/19/jenkins-health-check/",
+            "url": "https://jiyeonseo.github.io/2020/03/19/jenkins-health-check/",
+            "title": "Jenkins를 이용하여 상태 모니터링하기",
+            "summary": "매번하지만 항상 까먹는 젠킨스 설정.\n\n간단하게 젠킨스를 이용해 서비스가 잘 돌아가고 있는지 체크하는 잡을 정리한다.\n\n환경: Jenkins\n\n매개 변수\n\n매개변수로 꺼내놓으면 다른 서비스, 웹사이트 등 하나의 item을 카피해서 변경해주기 쉽다.\nURL : 확인할 URL\nATTEMPT : 시도 할 숫자\n`T ...",
+            "image": "https://jiyeonseo.github.io/@assets/20200319/env_var.png",
+            "date_modified": "2020-03-19T00:00:00.000Z"
+        },
+        {
+            "id": "https://jiyeonseo.github.io/2020/03/10/pytest/",
+            "url": "https://jiyeonseo.github.io/2020/03/10/pytest/",
+            "title": "빠르게 시작하는 pytest",
+            "summary": "pytest를 적용하면서 공부한 내용을 정리하는거라 간단하게 정리합니다. 추후 더 공부하며 업데이트 하겠습니다.\n\n> pytest is a framework that makes building simple and scalable tests easy. Tests are expressive and readable—no boilerplate code requ ...",
+            "date_modified": "2020-03-10T00:00:00.000Z"
+        },
+        {
+            "id": "https://jiyeonseo.github.io/2020/03/07/start-rust/",
+            "url": "https://jiyeonseo.github.io/2020/03/07/start-rust/",
+            "title": "Rust 기초",
+            "summary": "설치\n\n$ curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh\n\nQuick Hello world!\n// main.rs\nfn main() {\n    println!(\"hello world\")\n}\n\n$ rustc main.rs\n$ ./ma ...",
+            "date_modified": "2020-03-07T00:00:00.000Z"
+        },
+        {
+            "id": "https://jiyeonseo.github.io/2020/03/01/feb-2020/",
+            "url": "https://jiyeonseo.github.io/2020/03/01/feb-2020/",
+            "title": "(회고) 2020 2월",
+            "summary": "코로나로 모두가 힘들었던 한 달 이였다. 심지어 아직도 끝나지 않았으며, SNS에서는 각종 혐오가 난무하며, 가족들을 걱정하는 것 밖에는 내가 할 수 있는게 없는 무기력한 나날이 계속 되고 있다.\n\n나쁜 일만 있었던 것은 아니다. 코로나맵, [질병관리본부 챗봇](https://tess.dev/posts/k ...",
+            "image": "https://jiyeonseo.github.io/@assets/20200301/ringle_calendar_feb.png",
+            "date_modified": "2020-03-01T00:00:00.000Z"
+        },
+        {
+            "id": "https://jiyeonseo.github.io/2020/02/16/bashrc-tips/",
+            "url": "https://jiyeonseo.github.io/2020/02/16/bashrc-tips/",
+            "title": ".bashrc tips",
+            "summary": "사실 나는 Oh My Zsh을 써서 주로 ~/.zshrc 를 쓰지만, 더 일반적인 경우에도 쓸 수 있음으로 제목은 ~/.bashrc로. 자기가 원하는 곳에 잘 넣어주기만 하면 된다.\n\n터미널에서 지금 경로 VS Code로 바로 열기\n\n설정 방법\n\n.bashrc or .zshrc\ncode ( ...",
+            "date_modified": "2020-02-16T00:00:00.000Z"
+        },
+        {
+            "id": "https://jiyeonseo.github.io/2020/02/15/python-string-json/",
+            "url": "https://jiyeonseo.github.io/2020/02/15/python-string-json/",
+            "title": "Python string이 valid json 형태인지 확인하기",
+            "summary": "import json\ndef is_json(obj):\n    try:\n        json_object = json.loads(obj)\n{ } 가 포함된 string이 invalid json 인 경우 Exception\n        iterator = iter(json_object)\n{ } 가 없는 경우는 ...",
+            "date_modified": "2020-02-15T00:00:00.000Z"
+        },
+        {
+            "id": "https://jiyeonseo.github.io/2020/02/01/jan-2020/",
+            "url": "https://jiyeonseo.github.io/2020/02/01/jan-2020/",
+            "title": "(회고) 2020 1월",
+            "summary": "2019년을 마무리하며 일년 회고를 하지 않았다. 여러 변명 거리가 있긴 하지만 어째뜬 가장 큰 이유는 귀찮아서 였다. 왠지 잘 기억도 안나고. 올해부터는 한달에 한번씩 미리 회고를 해볼까 한다. 혼자하는 월말정산.\n\n#공부\n\n영어공부 : 링글 시작\n영어 공부는 평생 숙제이지만 좋아하기도 한다. 다른 공부의 영역을 넓히는데 가장 큰 ...",
+            "date_modified": "2020-02-01T00:00:00.000Z"
+        },
+        {
+            "id": "https://jiyeonseo.github.io/2019/12/28/applescript/",
+            "url": "https://jiyeonseo.github.io/2019/12/28/applescript/",
+            "title": "Applescript로 간단한 카톡 자동 대화하기",
+            "summary": "카카오톡에서 카카오 AI봇(외개인아가)을 오픈하면서 이벤트 를 하였다. 경품은 에어팟 프로! 경품을 받고싶다.\n\n이벤트 상세 정보는 아래와 같다.\n카카오톡채널: 외개인아가 [https://pf.kakao.com/lKxoMT](https://pf.kakao.com/ ...",
+            "image": "https://jiyeonseo.github.io/@assets/20191228/start_conversation.jpg",
+            "date_modified": "2019-12-28T00:00:00.000Z"
+        },
+        {
+            "id": "https://jiyeonseo.github.io/2019/06/07/vim-study-week1/",
+            "url": "https://jiyeonseo.github.io/2019/06/07/vim-study-week1/",
+            "title": "Vim 공부하기 - Week 1",
+            "summary": "나는 왜 vim 공부를 시작했는가\nVim을 아예 사용할 줄 몰랐던 건 아닙니다. 일을 하다보면 바로 서버 붙어서 작업 할 때도 종종 있고, finder로 파일 찾기 귀찮을 때, 텍스트로 이루어 진 파일을 볼 땐 vim이 제일 편하니까요.\n\n트위터에서 핫했던 [Vim 교정학원](https://www.youtube.com/watch?v=lNWuf4 ...",
+            "date_modified": "2019-06-07T00:00:00.000Z"
+        },
+        {
+            "id": "https://jiyeonseo.github.io/2019/01/21/daily-commit-100days/",
+            "url": "https://jiyeonseo.github.io/2019/01/21/daily-commit-100days/",
+            "title": "일일커밋 Day 112",
+            "summary": "작년 HacktoberFest를 기점으로 왠지 \"일일 커밋\"을 하게 되었다. (중간중간 15일 정도 빼먹었네)\n\n지구력이 좋은 편이긴 하지만 커밋 습관(본업 제외하고) 처음이라 좀 뿌듯하기도 하고 앞으로 더 잘하고 싶어 짧게 소감을 남겨 보려 한다.\n\n좋았던 점\n\nHack ...",
+            "image": "https://jiyeonseo.github.io/@assets/20190121/github_tile.png",
+            "date_modified": "2019-01-21T00:00:00.000Z"
+        },
+        {
+            "id": "https://jiyeonseo.github.io/2019/01/02/chatbot-programming/",
+            "url": "https://jiyeonseo.github.io/2019/01/02/chatbot-programming/",
+            "title": "[책] '가장 빨리 만나는 챗봇 프로그래밍'",
+            "summary": "['가장 빨리 만나는 챗봇 프로그래밍 with Bot Framework'](https://search.daum.net/search?w=bookpage&bookId=4836771&tab=introduction&DA=LB2&q=%EA%B0%80%EC%9E%A5%20%EB%B9%A8%EB%A6%AC%20%EB%A7%8C%EB%82%98%EB%8A%94%20% ...",
+            "date_modified": "2019-01-02T00:00:00.000Z"
+        },
+        {
+            "id": "https://jiyeonseo.github.io/2018/12/31/review2018/",
+            "url": "https://jiyeonseo.github.io/2018/12/31/review2018/",
+            "title": "[회고] Review 2018",
+            "summary": "올해는 좋은 회고들이 정말 많이 올라오는 것 같다. (너무 부끄러워서) 썼다 지웠다를 반복하다가 좋은 회고 포맷을 보고 정말 간단히 올해를 정리해보기로 마음 먹었다. 2019년 12월 31일에는 그래도 꽤 발전했구나 하며 이 글을 볼 수 있길.\n ...",
+            "image": "https://jiyeonseo.github.io/@assets/20181231/hacktober.png",
+            "date_modified": "2018-12-31T00:00:00.000Z"
+        },
+        {
+            "id": "https://jiyeonseo.github.io/2018/10/14/deview2018/",
+            "url": "https://jiyeonseo.github.io/2018/10/14/deview2018/",
+            "title": "[후기] Deview 2018",
+            "summary": "deview2018\n\n올해도 좋은 분들의 도움을 받아 Deview2018 Day1에 다녀왔다.\n\n매년마다 올해는 내용이 괜찮네, 구성이 좋네, 부스가 나쁘네, 기념 ...",
+            "image": "https://jiyeonseo.github.io/images/deview2018/deview_2018_4.JPG",
+            "date_modified": "2018-10-14T00:00:00.000Z"
+        },
+        {
+            "id": "https://jiyeonseo.github.io/2018/08/31/telegram-chatbot/",
+            "url": "https://jiyeonseo.github.io/2018/08/31/telegram-chatbot/",
+            "title": "Azure Function + Telegram chatbot 만들기",
+            "summary": "Serverless Telegram bot on AWS Lambda 는 AWS 람다 + Python 을 이용하여 텔레그램 봇을 만드는 실습 블로그인데, 읽다가 왠지 조금 다르게 해보고 싶어서 Azure Function ...",
+            "image": "https://jiyeonseo.github.io/@assets/20180831/telegram_bot.png",
+            "date_modified": "2018-08-31T00:00:00.000Z"
+        },
+        {
+            "id": "https://jiyeonseo.github.io/2018/08/12/growth-hacking/",
+            "url": "https://jiyeonseo.github.io/2018/08/12/growth-hacking/",
+            "title": "[책] 그로스 해킹 Growth Hacking",
+            "summary": "그로스 해킹 Growth Hacking - 스타트업을 위한 실용주의 마케팅\n\n작고 얇은 분량이 맘에 들어 집어든 책인데 정말 알차게 핵심을 짚고 있는 책이라 시간가는 줄 모르고 술술 읽었다. IT 회사 혹은 스타트업에서 일하는 기획자 혹은 개 ...",
+            "image": "https://jiyeonseo.github.io/@assets/20180812/growthhacking.jpg",
+            "date_modified": "2018-08-12T00:00:00.000Z"
+        }
+    ]
+}
