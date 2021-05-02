@@ -47,7 +47,8 @@ module.exports = {
         ga: "UA-63830559-1"
       }
     ],
-    ["feed", feed_options]
+    ["feed", feed_options],
+    ['@maginapp/vuepress-plugin-katex', { delimiters: 'dollars' }],
   ],
   themeConfig: {
     /**
