@@ -12,7 +12,7 @@ tags:
 - 환경 : mysql
 - 작업 내용 : 기존 있는 field를 unique로 해주어야 함.
 
-간단한 내용이기 때문에 다음과 같은 SQL문을 준비했다.
+다음과 같은 SQL문을 준비했다.
 
 ```sql
 ALTER TABLE `My_Tables`
@@ -20,6 +20,7 @@ ADD UNIQUE INDEX `my_field_UNIQUE` (`my_field`)
 ```
 
 실행하자 다음과 같은 에러가 났다.
+
 ```
 Duplicate entry '' for key 'my_field_UNIQUE'
 ```
