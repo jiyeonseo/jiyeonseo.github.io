@@ -111,5 +111,5 @@ Replays의 녹화는 기본 record 녹화와는 조금 다르게 동작한다고
 ![스크린샷 2022-10-09 오후 6 44 30](https://user-images.githubusercontent.com/2231510/194749856-2bd82424-5560-416a-aa47-60a831e389f9.png) 
 
 
-## reference 
+## references 
 - [How to use Bird Eats Bug to debug your front-end application](https://birdeatsbug.com/blog/how-to-use-bird-to-debug-front-end-application)
