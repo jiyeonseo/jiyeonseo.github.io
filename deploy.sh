@@ -14,6 +14,7 @@ cd blog/.vuepress/dist
 # echo 'www.example.com' > CNAME
 
 git init
+git branch -m master
 git add -A
 git commit -m 'update blog'
 git push -f git@github.com:jiyeonseo/jiyeonseo.github.io.git master
