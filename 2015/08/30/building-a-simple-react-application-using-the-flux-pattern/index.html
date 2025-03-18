@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>[번역]Flux 패턴을 이용한 간단한 React 어플리케이션 만들어보기 | Daily Log</title>
+    <meta name="generator" content="VuePress 1.9.10">
+    <link rel="apple-touch-icon" sizes="180x180" href="../assets/favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../assets/favicons/favicon-16x16.png">
+    <link rel="shortcut icon" href="../assets/favicons/favicon.ico">
+    <link rel="alternate" type="application/rss+xml" href="https://jiyeonseo.github.io/rss.xml" title="Daily Log RSS Feed">
+    <link rel="alternate" type="application/atom+xml" href="https://jiyeonseo.github.io/feed.atom" title="Daily Log Atom Feed">
+    <link rel="alternate" type="application/json" href="https://jiyeonseo.github.io/feed.json" title="Daily Log JSON Feed">
+    <meta name="description" content="
+
+공부하기 위해 막 번역한 문서입니다. 매끄럽지 못한 번역 양해 부탁드리며, 오역이나 다른 의견이 있으시다면 편히 댓글 달아주세요~
+
+[Tony Spiro의 Building A Simple React Application Using The Flux Pattern: A Step-By-Step Guide](http://tonyspiro.com/building ...">
+    
+    <link rel="preload" href="/assets/css/0.styles.d9e965bb.css" as="style"><link rel="preload" href="/assets/js/app.ca882463.js" as="script"><link rel="preload" href="/assets/js/4.d48376ce.js" as="script"><link rel="preload" href="/assets/js/1.a7328d07.js" as="script"><link rel="preload" href="/assets/js/42.0b1c5b61.js" as="script"><link rel="prefetch" href="/assets/js/100.20349d4f.js"><link rel="prefetch" href="/assets/js/101.337c7ac5.js"><link rel="prefetch" href="/assets/js/102.df0c3b4c.js"><link rel="prefetch" href="/assets/js/103.9ab2bce5.js"><link rel="prefetch" href="/assets/js/104.a8cfe2ac.js"><link rel="prefetch" href="/assets/js/105.fbf41c7d.js"><link rel="prefetch" href="/assets/js/106.137693c5.js"><link rel="prefetch" href="/assets/js/107.7b67094d.js"><link rel="prefetch" href="/assets/js/108.9c79596c.js"><link rel="prefetch" href="/assets/js/109.8f827ec6.js"><link rel="prefetch" href="/assets/js/11.266ec168.js"><link rel="prefetch" href="/assets/js/110.d3557852.js"><link rel="prefetch" href="/assets/js/111.037463d3.js"><link rel="prefetch" href="/assets/js/112.71dfe16b.js"><link rel="prefetch" href="/assets/js/113.98586e30.js"><link rel="prefetch" href="/assets/js/114.b61c2291.js"><link rel="prefetch" href="/assets/js/115.013a015b.js"><link rel="prefetch" href="/assets/js/116.1b44155e.js"><link rel="prefetch" href="/assets/js/117.ba320cb6.js"><link rel="prefetch" href="/assets/js/118.bce8c1cf.js"><link rel="prefetch" href="/assets/js/119.4cfe496d.js"><link rel="prefetch" href="/assets/js/12.8f3a6060.js"><link rel="prefetch" href="/assets/js/120.df3465f8.js"><link rel="prefetch" href="/assets/js/121.2ab0ab3e.js"><link rel="prefetch" href="/assets/js/122.e84ca54f.js"><link rel="prefetch" href="/assets/js/123.c7c4409a.js"><link rel="prefetch" href="/assets/js/124.07b6783e.js"><link rel="prefetch" href="/assets/js/125.b1701c7a.js"><link rel="prefetch" href="/assets/js/126.0d92253e.js"><link rel="prefetch" href="/assets/js/127.007a575d.js"><link rel="prefetch" href="/assets/js/13.9ff4ae05.js"><link rel="prefetch" href="/assets/js/14.215024b0.js"><link rel="prefetch" href="/assets/js/15.0ff47d16.js"><link rel="prefetch" href="/assets/js/16.37e6c0ed.js"><link rel="prefetch" href="/assets/js/17.cbba4f66.js"><link rel="prefetch" href="/assets/js/18.b7e71dfe.js"><link rel="prefetch" href="/assets/js/19.c4464fe9.js"><link rel="prefetch" href="/assets/js/2.f8783da8.js"><link rel="prefetch" href="/assets/js/20.2dc08191.js"><link rel="prefetch" href="/assets/js/21.ff5f7b06.js"><link rel="prefetch" href="/assets/js/22.661f2a84.js"><link rel="prefetch" href="/assets/js/23.cf29033a.js"><link rel="prefetch" href="/assets/js/24.dd6f5bc6.js"><link rel="prefetch" href="/assets/js/25.9d7bdc46.js"><link rel="prefetch" href="/assets/js/26.3b8d6e0b.js"><link rel="prefetch" href="/assets/js/27.80928391.js"><link rel="prefetch" href="/assets/js/28.58a77b17.js"><link rel="prefetch" href="/assets/js/29.7f8113cb.js"><link rel="prefetch" href="/assets/js/3.487971c8.js"><link rel="prefetch" href="/assets/js/30.48f0ed8a.js"><link rel="prefetch" href="/assets/js/31.832b04d7.js"><link rel="prefetch" href="/assets/js/32.f05f003a.js"><link rel="prefetch" href="/assets/js/33.f9295acc.js"><link rel="prefetch" href="/assets/js/34.a80db534.js"><link rel="prefetch" href="/assets/js/35.abe84c23.js"><link rel="prefetch" href="/assets/js/36.4edabe0d.js"><link rel="prefetch" href="/assets/js/37.e7cfc869.js"><link rel="prefetch" href="/assets/js/38.aa1064e1.js"><link rel="prefetch" href="/assets/js/39.06859e09.js"><link rel="prefetch" href="/assets/js/40.7969b128.js"><link rel="prefetch" href="/assets/js/41.7daa36db.js"><link rel="prefetch" href="/assets/js/43.e741fcb4.js"><link rel="prefetch" href="/assets/js/44.212dc972.js"><link rel="prefetch" href="/assets/js/45.c68048f8.js"><link rel="prefetch" href="/assets/js/46.114afb81.js"><link rel="prefetch" href="/assets/js/47.862c6e14.js"><link rel="prefetch" href="/assets/js/48.c9b2f074.js"><link rel="prefetch" href="/assets/js/49.e7114482.js"><link rel="prefetch" href="/assets/js/5.bcd1442f.js"><link rel="prefetch" href="/assets/js/50.f467528a.js"><link rel="prefetch" href="/assets/js/51.f821ca96.js"><link rel="prefetch" href="/assets/js/52.649435a5.js"><link rel="prefetch" href="/assets/js/53.5b8dc67a.js"><link rel="prefetch" href="/assets/js/54.a0ca167c.js"><link rel="prefetch" href="/assets/js/55.3c3380f0.js"><link rel="prefetch" href="/assets/js/56.18549872.js"><link rel="prefetch" href="/assets/js/57.e19ed683.js"><link rel="prefetch" href="/assets/js/58.79fe55f7.js"><link rel="prefetch" href="/assets/js/59.4db8e029.js"><link rel="prefetch" href="/assets/js/6.49ca5872.js"><link rel="prefetch" href="/assets/js/60.9abd3c2e.js"><link rel="prefetch" href="/assets/js/61.e63ac9bb.js"><link rel="prefetch" href="/assets/js/62.6e924a53.js"><link rel="prefetch" href="/assets/js/63.9f33542a.js"><link rel="prefetch" href="/assets/js/64.38c313d2.js"><link rel="prefetch" href="/assets/js/65.fcfcf532.js"><link rel="prefetch" href="/assets/js/66.5012f3db.js"><link rel="prefetch" href="/assets/js/67.5b57b6b4.js"><link rel="prefetch" href="/assets/js/68.d99d5845.js"><link rel="prefetch" href="/assets/js/69.8107e489.js"><link rel="prefetch" href="/assets/js/7.a66f6791.js"><link rel="prefetch" href="/assets/js/70.27161263.js"><link rel="prefetch" href="/assets/js/71.761b94a6.js"><link rel="prefetch" href="/assets/js/72.531ebc5e.js"><link rel="prefetch" href="/assets/js/73.2c4b9c38.js"><link rel="prefetch" href="/assets/js/74.f50e9025.js"><link rel="prefetch" href="/assets/js/75.95a579c0.js"><link rel="prefetch" href="/assets/js/76.54cac59a.js"><link rel="prefetch" href="/assets/js/77.43aab426.js"><link rel="prefetch" href="/assets/js/78.f19c6ed1.js"><link rel="prefetch" href="/assets/js/79.5758ad17.js"><link rel="prefetch" href="/assets/js/8.b2bf099e.js"><link rel="prefetch" href="/assets/js/80.9a393ba1.js"><link rel="prefetch" href="/assets/js/81.53c49996.js"><link rel="prefetch" href="/assets/js/82.b94db98b.js"><link rel="prefetch" href="/assets/js/83.44f7bcdf.js"><link rel="prefetch" href="/assets/js/84.38740eee.js"><link rel="prefetch" href="/assets/js/85.75d98f53.js"><link rel="prefetch" href="/assets/js/86.cbe5c682.js"><link rel="prefetch" href="/assets/js/87.91edfd8c.js"><link rel="prefetch" href="/assets/js/88.a414f2e3.js"><link rel="prefetch" href="/assets/js/89.a0e02dc8.js"><link rel="prefetch" href="/assets/js/90.8df0fa19.js"><link rel="prefetch" href="/assets/js/91.30c58ca2.js"><link rel="prefetch" href="/assets/js/92.41dc4428.js"><link rel="prefetch" href="/assets/js/93.4dac8c5f.js"><link rel="prefetch" href="/assets/js/94.6f998976.js"><link rel="prefetch" href="/assets/js/95.fa78735e.js"><link rel="prefetch" href="/assets/js/96.46ebbc99.js"><link rel="prefetch" href="/assets/js/97.b91d70bf.js"><link rel="prefetch" href="/assets/js/98.08cf1b1d.js"><link rel="prefetch" href="/assets/js/99.f184a890.js"><link rel="prefetch" href="/assets/js/vuejs-paginate.b53dac77.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.d9e965bb.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div id="vuepress-theme-blog__global-layout"><section id="header-wrapper"><header id="header"><div class="header-wrapper"><div class="title"><a href="/" class="nav-link home-link">Daily Log </a></div> <div class="header-right-wrap"><ul class="nav"><li class="nav-item"><a href="/" class="nav-link">Blog</a></li><li class="nav-item"><a href="/tag/" class="nav-link">Tags</a></li><li class="nav-item"><a href="/about.html" class="nav-link">About Me</a></li></ul> <div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <a href="/rss.xml" class="feed"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-rss"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg></a></div></div></header></section> <div id="mobile-header"><div class="mobile-header-bar"><div class="mobile-header-title"><a href="/" class="nav-link mobile-home-link">Daily Log </a> <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg></div> <div class="mobile-menu-wrapper"><hr class="menu-divider"> <ul class="mobile-nav"><li class="mobile-nav-item"><a href="/" class="nav-link">Blog</a></li><li class="mobile-nav-item"><a href="/tag/" class="nav-link">Tags</a></li><li class="mobile-nav-item"><a href="/about.html" class="nav-link">About Me</a></li> <li class="mobile-nav-item"><a href="/rss.xml" class="feed"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-rss"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg></a></li></ul></div></div></div> <div class="content-wrapper"><div id="vuepress-theme-blog__post-layout"><article itemscope="itemscope" itemtype="https://schema.org/BlogPosting" class="vuepress-blog-theme-content"><header><h1 itemprop="name headline" class="post-title">
+        
+      </h1> <div class="post-meta"><!----> <div class="post-meta-date"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-clock"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg> <time pubdate itemprop="datePublished" datetime="2015-08-30T00:00:00.000Z">
+      2015-08-30
+    </time></div> <!----></div></header> <div itemprop="articleBody" class="content__default"><h1 id="번역-flux-패턴을-이용한-간단한-react-어플리케이션-만들어보기"><a href="#번역-flux-패턴을-이용한-간단한-react-어플리케이션-만들어보기" class="header-anchor">#</a> [번역]Flux 패턴을 이용한 간단한 React 어플리케이션 만들어보기</h1> <p>공부하기 위해 막 번역한 문서입니다. 매끄럽지 못한 번역 양해 부탁드리며, 오역이나 다른 의견이 있으시다면 편히 댓글 달아주세요~</p> <p><a href="http://tonyspiro.com/building-a-simple-react-application-using-the-flux-pattern/" target="_blank" rel="noopener noreferrer">Tony Spiro의 Building A Simple React Application Using The Flux Pattern: A Step-By-Step Guide<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>를 번역 글입니다.</p> <p>리액트는 인터렉티브한 자바스크립트 어플리케이션을 만들기 좋은 강력한 라이브러리다. 가장 강력한 한가지를 꼽으라면 단방향 데이터 흐름을 만들 수 있다는 것이다. 이는 다른 프레임 워크에서의 양방향 데이터 바인딩과 큰 다른점이다. 리액트를 이용한다면 모든 어플리케이션의 부분 부분들지 자기 자신 하나의(single) 소스에 의해 컨트롤 된다. 이 자신은 컴포넌트라 정의 되고 이것은 “props”를 통해 자신이 가진 컴포넌트에게 다시 전해진다.</p> <p>컴포넌트가 더 더해질 수록, 로직은 더 복잡해져가고 컴포넌트에서 컴포넌트로 이어지는 이벤트들을 따라가기 힘들어진다. 바로 이러한 점 때문에 Flux가 단계적으로 이벤트를 실행시키고 데이터를 바꾸는 outlet을 제공하는 이유이다.</p> <p>Flux의 그래프와 모델들을 설명하기에 앞서 쉬운 Flux 예제 어플리케션을 만들어보자. 여기서 우리는 ES6와 babel의 도움을 받아 볼 것이다. 만약 위의 것들과 친숙하지 않다면 <a href="https://babeljs.io/" target="_blank" rel="noopener noreferrer">이 글<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a> 을 참고하길 바란다. 바벨은 es6와 jsx()를 동시에 사용 할 수 있게 해주며 ES5로 컴파일 시켜준다. 이를 통해 최신 그리고 오래된 브라우저 모두 호환될 수 있다. 그럼 이제 시작해보자.</p> <h3 id="간략하게"><a href="#간략하게" class="header-anchor">#</a> 간략하게</h3> <p>이번 튜토리얼의 전체 소스는 <a href="https://github.com/tonyspiro/easy-flux-example" target="_blank" rel="noopener noreferrer">깃허브<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>에서 다운받아 볼 수 있다. 만약 스텝 바이 스텝으로 알아보고 싶다면 계속 읽어 보도록 하자.</p> <h3 id="시작하기"><a href="#시작하기" class="header-anchor">#</a> 시작하기</h3> <p>먼저, 실습해 볼 위치에서 아래의 명령어를 실행 시켜보자.</p> <div class="language-sh extra-class"><pre class="language-sh"><code><span class="token function">mkdir</span> easy-flux-example
+<span class="token builtin class-name">cd</span> easy-flux-example
+</code></pre></div><p>이제 dependency들을 추가해 보자. 보통 package.json 파일과 함께 npm install 을 실행시키겠지만,
+우리는 공부하고 있으니 어떤 것들이 추가되고 왜 필요한지 알아보기 위해 아래와 같이 명령어를 실행시켜보겠다:
+(아래 명령어를 한번에 실행시켜야 한다)</p> <div class="language-sh extra-class"><pre class="language-sh"><code><span class="token function">npm</span> <span class="token function">install</span> react babelify browserify flux lodash vinyl-source-stream events gulp gulp-uglify gulp-rename run-sequence
+</code></pre></div><p>(혹은 다음과 같이 한번에 하나씩 도 해볼수 있다.)</p> <div class="language-sh extra-class"><pre class="language-sh"><code><span class="token function">npm</span> <span class="token function">install</span> react // 리액트<span class="token punctuation">(</span>react<span class="token punctuation">)</span>
+<span class="token function">npm</span> <span class="token function">install</span> babelify // 바벨<span class="token punctuation">(</span>babel<span class="token punctuation">)</span> 컴파일러
+<span class="token function">npm</span> <span class="token function">install</span> browserify // 노드 모듈 로더
+<span class="token function">npm</span> <span class="token function">install</span> flux // 플럭스<span class="token punctuation">(</span>flux<span class="token punctuation">)</span>
+<span class="token function">npm</span> <span class="token function">install</span> lodash // 멋진 JS 유틸
+<span class="token function">npm</span> <span class="token function">install</span> vinyl-source-stream // 쉬운 걸프 이용을 위한
+<span class="token function">npm</span> <span class="token function">install</span> events // 노드 이벤트 emmiiter
+<span class="token function">npm</span> <span class="token function">install</span> gulp // 컴파일과 빌드를 할 테스크 러너
+<span class="token function">npm</span> <span class="token function">install</span> gulp-uglify //
+// bundle.js<span class="token punctuation">(</span><span class="token number">2</span>.7MB<span class="token punctuation">)</span>를 bundle.min.js<span class="token punctuation">(</span>251K<span class="token punctuation">)</span>로 압축
+<span class="token function">npm</span> <span class="token function">install</span> gulp-rename //  bundle.js를 bundle.min.js로 이름 변경
+<span class="token function">npm</span> <span class="token function">install</span> run-sequence // gulp 프로세스를 순서대로 실행하도록
+</code></pre></div><p>이제 필요한 모든 것들을 준비했다. 이제 테스크 러너부터 만들어보자. 나는 Gulp를 선호하지만, 원한다면 <a href="http://gruntjs.com/" target="_blank" rel="noopener noreferrer">Grunt<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>를 사용해도 좋다.(나를 포함해, <a href="http://sixrevisions.com/web-development/grunt-vs-gulp/" target="_blank" rel="noopener noreferrer">다수의 개발자들이 Gulp가 더 낫다고 주장하고 있지만<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>)</p> <p>다음 코드를 더해보자 :</p> <div class="language- extra-class"><pre class="language-text"><code>// gulpfile.js
+var gulp = require('gulp');
+var browserify = require('browserify');
+var babelify = require('babelify');
+var source = require('vinyl-source-stream');
+var uglify = require('gulp-uglify');
+var rename = require('gulp-rename');
+var runSequence = require('run-sequence');
+
+gulp.task('build', function () {
+  return browserify({
+    entries: 'app.js',
+    extensions: ['.jsx'],
+    debug: true
+  })
+  .transform(babelify)
+  .bundle()
+  .pipe(source('bundle.js'))
+  .pipe(gulp.dest('dist'));
+});
+
+gulp.task('compress', function() {
+  return gulp.src('./dist/bundle.js')
+    .pipe(uglify())
+    .pipe(rename({suffix: '.min'}))
+    .pipe(gulp.dest('dist'));
+});
+
+gulp.task('default', function(cb) {
+  runSequence('build','compress', cb);
+});
+</code></pre></div><p>파일을 한번 살펴보자. default build는 Browserify로 모든 모듈들을 묶고, Babel을 이용해 bundle.js로 변환시켜본다. 그리고 dist 폴더에 넣음으로써 끝난다. 정말 간단하고 명료하다.</p> <p>자, 이제 모든 준비를 마쳤다. 이제 (드디어!) 우리의 어플리케이션을 만들어보자.</p> <p>먼저, <code>index.html</code>을 만든다.</p> <div class="language- extra-class"><pre class="language-text"><code>vim index.html
+</code></pre></div><p>다음과 같이 index.html에 추가해 보자:</p> <div class="language- extra-class"><pre class="language-text"><code>&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+  &lt;meta charset=&quot;UTF-8&quot;&gt;
+  &lt;title&gt;Easy Flux Example&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;h1&gt;Easy Flux Example&lt;/h1&gt;
+  &lt;div id=&quot;app-root&quot;&gt;&lt;/div&gt;
+  &lt;script src=&quot;dist/bundle.min.js&quot;&gt;&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre></div><p>프론트앤드를 위한 것은 이게 전부다. 모든 다른 것들은 React와 Flux로 제어된다.</p> <p>이제 메인 app 파일로 어플리케이션 만들기를 시작하자.</p> <div class="language-sh extra-class"><pre class="language-sh"><code><span class="token function">vim</span> app.js
+</code></pre></div><p>아래 코드를  app.js에 더해보자.</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// app.js</span>
+<span class="token keyword">import</span> React <span class="token keyword">from</span> <span class="token string">'react'</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> AppRoot <span class="token keyword">from</span> <span class="token string">'./components/AppRoot'</span><span class="token punctuation">;</span> <span class="token comment">// 이후에 이 파일을 만들 것이다.</span>
+
+React<span class="token punctuation">.</span><span class="token function">render</span><span class="token punctuation">(</span><span class="token operator">&lt;</span>AppRoot <span class="token operator">/</span><span class="token operator">&gt;</span><span class="token punctuation">,</span>
+  document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">'app-root'</span><span class="token punctuation">)</span>
+<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre></div><p>ES6 문법은 바벨(Babel)을 통해 ES5와 호환될 수 있음을 명심하자. 노드 모듈 importing 역시 Browserify에 의해 제어 된다.</p> <p>다음으로는 AppRoot 컴포넌트를 만들어보자 .</p> <div class="language-ah extra-class"><pre class="language-text"><code>mkdir components
+cd components
+vim AppRoot.jsx
+</code></pre></div><p>파일에 다음과 같이 입력해보자.</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// AppRoot.jsx</span>
+<span class="token keyword">import</span> React <span class="token keyword">from</span> <span class="token string">'react'</span><span class="token punctuation">;</span>
+<span class="token keyword">class</span> <span class="token class-name">AppRoot</span> <span class="token keyword">extends</span> <span class="token class-name">React<span class="token punctuation">.</span>Component</span> <span class="token punctuation">{</span>
+    <span class="token function">render</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token comment">// 후에 이 곳에 list를 넣을 것이다.</span>
+        <span class="token keyword">let</span> itemHtml <span class="token operator">=</span> <span class="token operator">&lt;</span>li<span class="token operator">&gt;</span>Hello React<span class="token operator">&lt;</span><span class="token operator">/</span>li<span class="token operator">&gt;</span> <span class="token punctuation">;</span>
+        <span class="token keyword">return</span> <span class="token operator">&lt;</span>div<span class="token operator">&gt;</span>
+            <span class="token operator">&lt;</span>ul<span class="token operator">&gt;</span>
+                <span class="token punctuation">{</span> itemHtml <span class="token punctuation">}</span>
+            <span class="token operator">&lt;</span><span class="token operator">/</span>ul<span class="token operator">&gt;</span>
+         <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">&gt;</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token keyword">export</span> <span class="token keyword">default</span> AppRoot<span class="token punctuation">;</span>
+</code></pre></div><p>이제 돌아가 모든 것들이 잘 돌아가는지 확인해 보자.</p> <div class="language-sh extra-class"><pre class="language-sh"><code><span class="token builtin class-name">cd</span> <span class="token punctuation">..</span>/
+</code></pre></div><p>gulp 명령어를 실행시켜 ES6와 JSX를 ES5로 변환하고(Bebelify), 모든 파일을 bundle.js로 로드시키자(Browserify). 만약 처음 gulp를 실행 시키는 것이라면, 먼저 CLI를 이용해 gulp를 글로벌로 설치하자.</p> <div class="language-sh extra-class"><pre class="language-sh"><code><span class="token function">sudo</span> <span class="token function">npm</span> <span class="token function">install</span> gulp <span class="token parameter variable">-g</span>
+</code></pre></div><p>이제 빌드해보자.</p> <div class="language-sh extra-class"><pre class="language-sh"><code>gulp
+</code></pre></div><p>지금까지 우리가 한 것들을 체크해보자. 그저 쉽게 브라우저에서 index.html을 볼 수 있다. 하지만 localhost에서 보는게 더 좋을 것 같다. 만약 http-server 가 설치되어 있지 않다면, 아래와 같이 실행시켜보자.</p> <div class="language-sh extra-class"><pre class="language-sh"><code><span class="token function">sudo</span> <span class="token function">npm</span> <span class="token function">install</span> http-server <span class="token parameter variable">-g</span>
+http-server
+</code></pre></div><p>자, 이제  <a href="http://localhost:8080">http://localhost:8080</a> 으로 가보자. React 어플리케이션이 잘 실행 되었음을 알 수 있는 메세지를 볼 수 있을 것이다.</p> <p>React가 잘 작동됨을 확인했다. 이제 Flux를 이용해 좀 더 인터랙티브한 것들을 더해보자.</p> <h3 id="flux-적용하기"><a href="#flux-적용하기" class="header-anchor">#</a> Flux 적용하기</h3> <p>Flux 아키텍쳐에서 주요 부분은 컴포넌트(Components), 스토어(Store), 그리고 디스패쳐(Dispatcher)이다. 우리는 이미 하나의 컴포넌트가 있으니, 이제 스토어를 만들어보자. 스토어는 다음 3가지 역할을 할 것이다.</p> <ol><li>어플리케이션의 data를 초기화</li> <li>어플리케이션 실행 과정에 필요한 함수를 저장</li> <li>어플리케이션 re-render를 위한 event들을 등록(emit)</li></ol> <h3 id="스토어-store-로-부터-데이터-읽기"><a href="#스토어-store-로-부터-데이터-읽기" class="header-anchor">#</a> 스토어(Store)로 부터 데이터 읽기</h3> <p>스토어를 만들기 위해 다음과 같은 명령어를 실행 시켜 보자:</p> <div class="language- extra-class"><pre class="language-text"><code>mkdir stores
+cd stores
+vim ListStore.js
+</code></pre></div><p>ListStore.js에 다음과 같이 추가해 보자.</p> <div class="language- extra-class"><pre class="language-text"><code>// ListStore.js
+import {EventEmitter} from 'events';
+import _ from 'lodash';
+
+let ListStore = _.extend({}, EventEmitter.prototype, {
+
+  // 가짜 기본 데이터
+  items: [
+    {
+      name: 'Item 1',
+      id: 0
+    },
+    {
+      name: 'Item 2',
+      id: 1
+    }
+  ],
+
+  getItems: function(){
+    return this.items;
+  },
+
+});
+
+export default ListStore;
+</code></pre></div><p>이 코드에서 우리는 노드의 EventEmmiter 를 추가하였다. 이를 통해 스토어에 컴포넌트의 UI 렌더링을 트리거 시킬 수 있는  이벤트를 등록 할 수 있다. Lodash는 EventEmmiter을 ListStore 객체에 바인딩 되도록 돕는다.(다른 메소드를 사용할 수도 있다) 그리고 보여줄 가짜 기본 데이터도 생성하였다. <code>getItems</code> 함수는 스토어의 items를 가져올 수 있다.</p> <p>이제 AppRoot 컴포넌트에 ListStore를 추가하여 기본 스토어 데이터(default Store data)를 뿌려줄 수 있도록 해보자. 아래의 명령어를 실행하자:</p> <div class="language- extra-class"><pre class="language-text"><code>cd ../
+cd components
+vim AppRoot.jsx
+</code></pre></div><p>AppRoot.jsx 를 아래와 같이 바꿔보자:</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// AppRoot.jsx</span>
+<span class="token keyword">import</span> React <span class="token keyword">from</span> <span class="token string">'react'</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> ListStore <span class="token keyword">from</span> <span class="token string">'../stores/ListStore'</span><span class="token punctuation">;</span>
+
+<span class="token comment">// Store로 부터 데이터를 가져오는 메소드</span>
+<span class="token keyword">let</span> <span class="token function-variable function">getListState</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> <span class="token punctuation">{</span>
+    <span class="token literal-property property">items</span><span class="token operator">:</span> ListStore<span class="token punctuation">.</span><span class="token function">getItems</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">class</span> <span class="token class-name">AppRoot</span> <span class="token keyword">extends</span> <span class="token class-name">React<span class="token punctuation">.</span>Component</span> <span class="token punctuation">{</span>
+
+  <span class="token function">constructor</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">super</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>state <span class="token operator">=</span> <span class="token function">getListState</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token function">render</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+
+    <span class="token keyword">let</span> items <span class="token operator">=</span> ListStore<span class="token punctuation">.</span><span class="token function">getItems</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">let</span> itemHtml <span class="token operator">=</span> items<span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span><span class="token punctuation">(</span> <span class="token parameter">listItem</span> <span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+
+      <span class="token keyword">return</span> <span class="token operator">&lt;</span>li key<span class="token operator">=</span><span class="token punctuation">{</span> listItem<span class="token punctuation">.</span>id <span class="token punctuation">}</span><span class="token operator">&gt;</span>
+          <span class="token punctuation">{</span> listItem<span class="token punctuation">.</span>name <span class="token punctuation">}</span>
+        <span class="token operator">&lt;</span><span class="token operator">/</span>li<span class="token operator">&gt;</span><span class="token punctuation">;</span>
+
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">return</span> <span class="token operator">&lt;</span>div<span class="token operator">&gt;</span>
+        <span class="token operator">&lt;</span>ul<span class="token operator">&gt;</span>
+            <span class="token punctuation">{</span> itemHtml <span class="token punctuation">}</span>
+        <span class="token operator">&lt;</span><span class="token operator">/</span>ul<span class="token operator">&gt;</span>
+
+    <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">&gt;</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+<span class="token punctuation">}</span>
+
+<span class="token keyword">export</span> <span class="token keyword">default</span> AppRoot<span class="token punctuation">;</span>
+</code></pre></div><p>아래와 같이 명령어를 실행시켜 bundle.js를 다시 빌드하자:</p> <div class="language- extra-class"><pre class="language-text"><code>cd ../
+gulp
+</code></pre></div><p>다음 명령어를 실행 시키자:</p> <div class="language- extra-class"><pre class="language-text"><code>http-server
+</code></pre></div><p>이제 <a href="http://localhost:8080">http://localhost:8080</a>에서 달라진 모습을 확인해보자.</p> <h3 id="store에서-아이템-추가-삭제하기"><a href="#store에서-아이템-추가-삭제하기" class="header-anchor">#</a> Store에서 아이템 추가/삭제하기</h3> <p>Store에서 새로운 아이템을 추가해보도록 하자. 먼저, 이 기능을 수행할 새로운 컴포넌트 부터 만들어 보겠다. 다음과 같은 명령어를 실행시켜보자.</p> <div class="language- extra-class"><pre class="language-text"><code>cd components
+vim NewItemForm.jsx
+</code></pre></div><p>NewItemForm.jsx에 다음과 같은 코드를 더해 본다:</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// NewItemForm.jsx</span>
+<span class="token keyword">import</span> React <span class="token keyword">from</span> <span class="token string">'react'</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> AppDispatcher <span class="token keyword">from</span> <span class="token string">'../dispatcher/AppDispatcher'</span><span class="token punctuation">;</span>
+
+<span class="token keyword">class</span> <span class="token class-name">NewItemForm</span> <span class="token keyword">extends</span> <span class="token class-name">React<span class="token punctuation">.</span>Component</span> <span class="token punctuation">{</span>
+
+  <span class="token function">createItem</span><span class="token punctuation">(</span><span class="token parameter">e</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+
+    <span class="token comment">// 페이지를 리로드하지 않겠다.</span>
+    e<span class="token punctuation">.</span><span class="token function">preventDefault</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token comment">// ID를 만든다</span>
+    <span class="token keyword">let</span> id <span class="token operator">=</span> <span class="token function">guid</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+     <span class="token comment">// 입력창으로 부터 값을 가져온다.</span>
+    <span class="token keyword">let</span> item_title <span class="token operator">=</span> React<span class="token punctuation">.</span><span class="token function">findDOMNode</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>refs<span class="token punctuation">.</span>item_title<span class="token punctuation">)</span><span class="token punctuation">.</span>value<span class="token punctuation">.</span><span class="token function">trim</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token comment">// 입력창의 값을 삭제한다.</span>
+    React<span class="token punctuation">.</span><span class="token function">findDOMNode</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>refs<span class="token punctuation">.</span>item_title<span class="token punctuation">)</span><span class="token punctuation">.</span>value <span class="token operator">=</span> <span class="token string">''</span><span class="token punctuation">;</span>
+
+    <span class="token comment">// 여기에서 바로 마술이 일어난다.</span>
+     <span class="token comment">// state를 수정하기위해 이곳에서 action을 부를 필요가 없다.</span>
+     <span class="token comment">// AppDispatcher가 다 해줄 것이다.</span>
+    AppDispatcher<span class="token punctuation">.</span><span class="token function">dispatch</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+      <span class="token literal-property property">action</span><span class="token operator">:</span> <span class="token string">'add-item'</span><span class="token punctuation">,</span>
+      <span class="token literal-property property">new_item</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+        <span class="token literal-property property">id</span><span class="token operator">:</span> id<span class="token punctuation">,</span>
+        <span class="token literal-property property">name</span><span class="token operator">:</span> item_title
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+  <span class="token punctuation">}</span>
+
+  <span class="token function">render</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+
+    <span class="token keyword">return</span> <span class="token operator">&lt;</span>form onSubmit<span class="token operator">=</span><span class="token punctuation">{</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">createItem</span><span class="token punctuation">.</span><span class="token function">bind</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">)</span> <span class="token punctuation">}</span><span class="token operator">&gt;</span>
+        <span class="token operator">&lt;</span>input type<span class="token operator">=</span><span class="token string">&quot;text&quot;</span> ref<span class="token operator">=</span><span class="token string">&quot;item_title&quot;</span><span class="token operator">/</span><span class="token operator">&gt;</span>
+        <span class="token operator">&lt;</span>button<span class="token operator">&gt;</span>Add <span class="token keyword">new</span> <span class="token class-name">item</span><span class="token operator">&lt;</span><span class="token operator">/</span>button<span class="token operator">&gt;</span>
+      <span class="token operator">&lt;</span><span class="token operator">/</span>form<span class="token operator">&gt;</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">function</span> <span class="token function">guid</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">function</span> <span class="token function">s4</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> Math<span class="token punctuation">.</span><span class="token function">floor</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token number">1</span> <span class="token operator">+</span> Math<span class="token punctuation">.</span><span class="token function">random</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">*</span> <span class="token number">0x10000</span><span class="token punctuation">)</span>
+      <span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token number">16</span><span class="token punctuation">)</span>
+      <span class="token punctuation">.</span><span class="token function">substring</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  <span class="token keyword">return</span> <span class="token function">s4</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token function">s4</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">'-'</span> <span class="token operator">+</span> <span class="token function">s4</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">'-'</span> <span class="token operator">+</span> <span class="token function">s4</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">'-'</span> <span class="token operator">+</span>
+    <span class="token function">s4</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">'-'</span> <span class="token operator">+</span> <span class="token function">s4</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token function">s4</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token function">s4</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">export</span> <span class="token keyword">default</span> NewItemForm<span class="token punctuation">;</span>
+</code></pre></div><p>이 부분에서 어떤 일이 있는지 짧게 설명해 보겠다. <code>createItem</code> 함수가 연결된 텍스트 입력창(input box)이 나타난다. 폼 완료후 submit 버튼을 누르게 되면, <code>createItem</code> 함수는 새로운 ID를 만들고, 입력창을 초기화 시키고, ‘add-item’ 액션을 통과하여 <code>new_item</code> 데이터는 AppDispatcher로 가게된다.</p> <p>이제, 데이터를 받을 AppDispatcher를 만들어보겠다. 다음 명령어를 실행해보자:</p> <div class="language- extra-class"><pre class="language-text"><code>cd ../
+mkdir dispatcher
+cd dispatcher
+vim AppDispatcher.js
+</code></pre></div><p>그리고 다음과 같이 AppDispatcher.js를 작성해준다.</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">import</span> <span class="token punctuation">{</span>Dispatcher<span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'flux'</span><span class="token punctuation">;</span>
+<span class="token keyword">let</span> AppDispatcher <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Dispatcher</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">import</span> ListStore <span class="token keyword">from</span> <span class="token string">'../stores/ListStore'</span><span class="token punctuation">;</span>
+
+<span class="token comment">// AppDispatcher에 콜백 등록AppDispatcher.register((payload) =&gt; {</span>
+
+  <span class="token keyword">let</span> action <span class="token operator">=</span> payload<span class="token punctuation">.</span>action<span class="token punctuation">;</span>
+  <span class="token keyword">let</span> new_item <span class="token operator">=</span> payload<span class="token punctuation">.</span>new_item<span class="token punctuation">;</span>
+  <span class="token keyword">let</span> id <span class="token operator">=</span> payload<span class="token punctuation">.</span>id<span class="token punctuation">;</span>
+
+  <span class="token keyword">switch</span><span class="token punctuation">(</span>action<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+
+    <span class="token comment">// add-item 액션 시 실행.    case 'add-item':</span>
+      ListStore<span class="token punctuation">.</span><span class="token function">addItem</span><span class="token punctuation">(</span>new_item<span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token keyword">break</span><span class="token punctuation">;</span>
+
+     <span class="token comment">// remove-item 액션 시 실행.</span>
+    <span class="token keyword">case</span> <span class="token string">'remove-item'</span><span class="token operator">:</span>
+      ListStore<span class="token punctuation">.</span><span class="token function">removeItem</span><span class="token punctuation">(</span>id<span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token keyword">break</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">default</span><span class="token operator">:</span>
+      <span class="token keyword">return</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token comment">// 액션이 모두 완료된 이후 change 이벤트를 emit</span>
+  ListStore<span class="token punctuation">.</span><span class="token function">emitChange</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+  <span class="token keyword">return</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
+
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">export</span> <span class="token keyword">default</span> AppDispatcher<span class="token punctuation">;</span>
+</code></pre></div><p>이부분이 Flux를 이해하기 어려운 부분이다. 하지만 이 간단한 예제를 통해, AppDispatcher 호출 시, 어떤 액션이 실행되고 어떤 데이터가 전달되는지 결정하는 payload의 로직이 어떻게 실행되는지 훨씬 명료하게 이해할 수 있을거라 생각한다.
+‘add-item’ 액션은 <code>ListStore.addItem</code>을 트리거 시키고, ‘remove-item’ 액션은 <code>ListStore.removeItem</code>를 트리거 시킨다. 아직 이 함수들이 우리 스토어에 작성되어 있지 않다. ListStore에 추가해 보자.</p> <p>다음 명령어를 실행해 보자:</p> <div class="language- extra-class"><pre class="language-text"><code>cd ../stores
+vim ListStore.js
+</code></pre></div><p>다음과 같이 ListStore.js를 다시 작성해보자:</p> <div class="language- extra-class"><pre class="language-text"><code>// ListStore.js
+import {EventEmitter} from 'events';
+import _ from 'lodash';
+
+let ListStore = _.extend({}, EventEmitter.prototype, {
+
+  // 기본 데이터
+  items: [
+    {
+      name: 'Item 1',
+      id: 0
+    },
+    {
+      name: 'Item 2',
+      id: 1
+    }
+  ],
+
+  // 모든 아이템 가져오기
+  getItems: function(){
+    return this.items;
+  },
+
+  // 아이템 더하기
+  addItem: function(new_item){
+    this.items.push(new_item);
+  },
+
+  // 아이템 삭제하기
+  removeItem: function(item_id){
+
+    let items = this.items;
+
+    _.remove(items,(item) =&gt; {
+      return item_id == item.id;
+    });
+
+    this.items = items;
+
+  },
+
+  // change 이벤트 emit
+  emitChange: function(){
+    this.emit('change');
+  },
+
+  // change listener 등록
+  addChangeListener: function(callback){
+    this.on('change', callback);
+  },
+
+  // change listener 삭제
+  removeChangeListener: function(callback){
+    this.removeListener('change', callback);
+  }
+
+});
+
+export default ListStore;
+</code></pre></div><p>우리가 추가한 <code>addItem</code>과 <code>deleteItem</code> 함수는 <code>this.items</code>에서 아이템이 추가하거나 삭제한다. <code>emitChange</code>는 AppRoot 컴포넌트의 <code>_onChange</code>를 실행 시켜 ListStore에서 새로운 state를 받아 다시 렌더링하도록 한다.</p> <p>AppRoot 컴포넌트에 ListStore의 새로운 이벤트를 트리거를 받을 수(listen) 있도록 수정해보겠다.</p> <p>다음 명령어를 실행 시켜 보자:</p> <div class="language- extra-class"><pre class="language-text"><code>cd ../components
+vim AppRoot.jsx
+</code></pre></div><p>다음과 같이 AppRoot 를 수정해 보자:</p> <div class="language- extra-class"><pre class="language-text"><code>// AppRoot.jsx
+import React from 'react';
+import ListStore from '../stores/ListStore';
+import AppDispatcher from '../dispatcher/AppDispatcher';
+
+// Sub components
+import NewItemForm from './NewItemForm';
+
+// Store로 부터 state를 받아옴.
+let getListState = () =&gt; {
+  return {
+    items: ListStore.getItems()
+  };
+}
+
+class AppRoot extends React.Component {
+
+  // Store에서 바꾼 값을 토대로 setState를 해준다.
+  _onChange() {
+    this.setState(getListState());
+  }
+
+  constructor() {
+    super();
+    this.state = getListState();
+  }
+
+  // 스토어(store)에 change listener를 더한다.
+  componentDidMount() {
+    ListStore.addChangeListener(this._onChange.bind(this));
+  }
+
+  // 스로어(store)로부터 change listener를 삭제한다.
+  componentWillUnmount() {
+    ListStore.removeChangeListener(this._onChange.bind(this));
+  }
+
+  removeItem(e){
+
+    let id = e.target.dataset.id;
+
+    AppDispatcher.dispatch({
+      action: 'remove-item',
+      id: id
+    });
+
+  }
+
+  render(){
+
+    let _this = this;
+    let items = ListStore.getItems();
+    let itemHtml = items.map(( listItem ) =&gt; {
+      return &lt;li key={ listItem.id }&gt;
+          { listItem.name } &lt;button onClick={ _this.removeItem } data-id={ listItem.id }&gt;×&lt;/button&gt;
+        &lt;/li&gt;;
+    });
+
+    return &lt;div&gt;
+        &lt;ul&gt;
+            { itemHtml }
+        &lt;/ul&gt;
+        &lt;NewItemForm /&gt;
+    &lt;/div&gt;;
+  }
+
+}
+
+export default AppRoot;
+</code></pre></div><p>새로 추가된 <code>_onChange</code> 를 통해 Flux app에서 state가 바뀔 때 마다 불려질 것이다. 또 removeItem 함수에서는 AppDispatcher에 등록된 <code>remove-item</code> 액션을 부를 것 이다.</p> <p>자, 이제 우리의 예상대로 실행되는지 확인해보자. 아래의 명령어를 통해 bundle.js를 다시 빌드해보도록 하겠다.</p> <div class="language- extra-class"><pre class="language-text"><code>cd ../
+gulp
+</code></pre></div><p>gulp가 완료되면 실행 시켜보자:</p> <div class="language-sh extra-class"><pre class="language-sh"><code>http-server
+</code></pre></div><p>이제 <a href="http://localhost:8080">http://localhost:8080</a> 에서 아이템이 추가/삭제가 되는지 확인해 볼 수 있다.</p> <p>이 튜토리얼을 통해 React와 Flux의 강력한 장점을 이해하는데 도움이 되었기를 바란다. 전체 소스를 원한다면 <a href="https://github.com/tonyspiro/easy-flux-example">이 링크</a>를 통해 Flux 예제 어플리케이션을 다운 받아 볼 수 있다.</p> <p>질문이나 코멘트, 의견이 있다면 아래 코멘트를 달아주거나 <a href="https://twitter.com/tonyspiro">트위터</a>를 통해 이야기 해주길 바란다.</p> <p>– Tony Spiro</p></div> <footer><!----> <hr> <!----></footer></article> <div class="sticker vuepress-toc"><div class="vuepress-toc-item vuepress-toc-h3 active"><a href="#간략하게" title="간략하게">간략하게</a></div><div class="vuepress-toc-item vuepress-toc-h3"><a href="#시작하기" title="시작하기">시작하기</a></div><div class="vuepress-toc-item vuepress-toc-h3"><a href="#flux-적용하기" title="Flux 적용하기">Flux 적용하기</a></div><div class="vuepress-toc-item vuepress-toc-h3"><a href="#스토어-store-로-부터-데이터-읽기" title="스토어(Store)로 부터 데이터 읽기">스토어(Store)로 부터 데이터 읽기</a></div><div class="vuepress-toc-item vuepress-toc-h3"><a href="#store에서-아이템-추가-삭제하기" title="Store에서 아이템 추가/삭제하기">Store에서 아이템 추가/삭제하기</a></div></div></div></div> <footer class="footer" data-v-3d9deeb8><div class="footer-left-wrap" data-v-3d9deeb8><ul class="contact" data-v-3d9deeb8><li class="contact-item" data-v-3d9deeb8><a href="https://github.com/jiyeonseo" target="_blank" rel="noopener noreferrer" class="nav-link external" data-v-3d9deeb8><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-github" data-v-3d9deeb8><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22" data-v-3d9deeb8></path></svg>
+          
+        </a></li><li class="contact-item" data-v-3d9deeb8><a href="https://twitter.com/seojeee" target="_blank" rel="noopener noreferrer" class="nav-link external" data-v-3d9deeb8><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-twitter" data-v-3d9deeb8><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z" data-v-3d9deeb8></path></svg>
+          
+        </a></li></ul></div> <div class="footer-right-wrap" data-v-3d9deeb8><ul class="copyright" data-v-3d9deeb8><li class="copyright-item" data-v-3d9deeb8>Copyright © Jiyeon Seo 2020</li></ul></div></footer></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.ca882463.js" defer></script><script src="/assets/js/4.d48376ce.js" defer></script><script src="/assets/js/1.a7328d07.js" defer></script><script src="/assets/js/42.0b1c5b61.js" defer></script>
+  </body>
+</html>
